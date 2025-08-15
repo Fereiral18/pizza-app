@@ -15,8 +15,8 @@ body{
 }
 .image-background{
     filter: contrast(200%);
-    width: 30%;
-    min-width: 300px;
+    width: 250px;
+    min-width: 200px;
     height: 30vh;
 
 }

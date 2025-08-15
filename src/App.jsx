@@ -1,5 +1,5 @@
 
-import {  Container} from '@mui/material';
+import {  Container, Typography} from '@mui/material';
 import { NavBar } from '../components/NavBar';
 import Box from '@mui/material/Box';
 import { MenuItems } from '../components/MenuItems';
@@ -21,9 +21,9 @@ let namePizzeria = 'mis dos reinas'
     </Box>
     
    <Container sx={{display:'flex', flexDirection:'column', justifyContent:'center',alignItems:'center'}}>
-   <h1>¡Bienvenidos Menu de la Pizzeria!</h1>
+   <h1>¡Bienvenid@s, este es nuestro menú!</h1>
    <Box sx={{display:'flex', justifyContent:'center',alignItems:'center'}}>
-    <img src="https://cdn.pixabay.com/photo/2023/08/12/02/42/ai-generated-8184596_640.png" alt="" className='image-background'/>
+    <Typography>Sabores Venezolanos</Typography>
    </Box>
 
    <MenuItems />

@@ -55,7 +55,7 @@ export const NavBar=()=> {
               textDecoration: 'none',
             }}
           >
-              <img src={logo} alt="logo" className='logo' />
+              <img src={'/src/assets/c0613559-b9c7-44aa-a7bd-4be79bef1d3f.jpeg'} alt="logo" className='logo' />
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
@@ -69,7 +69,7 @@ export const NavBar=()=> {
             ))}
           </Box>
           <Box sx={{ width:'10%', height:'50px'}}>
-            <a href="https://wa.me/5804120779864" target='_blank'>
+            <a href="https://wa.me/542613460321" target='_blank'>
 
              <WhatsAppIcon sx={{fontSize:'300%', color:'black'}}/>
             </a>
