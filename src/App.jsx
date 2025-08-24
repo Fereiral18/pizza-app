@@ -40,7 +40,7 @@ function AnimacionBandera() {
         
             
 
-                 <img src="/src/assets/2922507_27121.jpg" width={200} className="bandera"  alt="" />
+                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpiMzPrhK5nrYBlCxjjWIMnoJ2oVPri-stzQ&s" width={200} className="bandera"  alt="" />
             
     </Box>
   );
