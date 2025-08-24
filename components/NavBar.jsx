@@ -50,6 +50,8 @@ export const NavBar = () => {
               src={"/src/assets/c0613559-b9c7-44aa-a7bd-4be79bef1d3f.jpeg"}
               alt="logo"
               className="logo"
+              width="200px"
+              height="200px"
             />
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
