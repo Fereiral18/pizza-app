@@ -13,52 +13,32 @@ import MenuItem from "@mui/material/MenuItem";
 
 import "./styles.css";
 
-const pages = ["Productos"];
+const pages = ["Productos", "contacto"];
 
 export const NavBar = () => {
   return (
     <AppBar
       position="static"
       sx={{
-        backgroundColor: "white",
-        "&:hover": {
-          backgroundColor: "#aaaaaa",
-          transform: "scale(1.05)",
-        },
+        backgroundColor: 'unset',
+        
       }}
     >
       <Container maxWidth="xl">
         <Toolbar>
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-              
-            }}
-          >
-            <img
-              src={"/src/assets/c0613559-b9c7-44aa-a7bd-4be79bef1d3f.jpeg"}
-              alt="logo"
-              className="logo"
-              width="200px"
-              height="200px"
-            />
-          </Typography>
+         <Box sx={{
+          width:"80px",
+          height:"80px",
+          
+          
+         }}>
+         <img src="/src/assets/c0613559-b9c7-44aa-a7bd-4be79bef1d3f.jpeg"  class="logo" alt="" />
+         </Box>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button
                 key={page}
-                sx={{ my: 2, color: "black", display: "block" }}
+                sx={{ my: 2, color: "white", display: "block" }}
               >
                 {page}
               </Button>
@@ -66,7 +46,7 @@ export const NavBar = () => {
           </Box>
           <Box sx={{ width: "10%", height: "50px" }}>
             <a href="https://wa.me/542613460321" target="_blank">
-              <WhatsAppIcon sx={{ fontSize: "300%", color: "black" }} />
+              <WhatsAppIcon sx={{ fontSize: "300%", color: "green" }} />
             </a>
           </Box>
         </Toolbar>

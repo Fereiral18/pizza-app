@@ -1,34 +1,108 @@
-
-import {  Container, Typography} from '@mui/material';
-import { NavBar } from '../components/NavBar';
-import Box from '@mui/material/Box';
-import { MenuItems } from '../components/MenuItems';
-
-
-
-
-
+import { Container, keyframes, styled, Typography } from "@mui/material";
+import { NavBar } from "../components/NavBar";
+import Box from "@mui/material/Box";
+import { MenuItems } from "../components/MenuItems";
+import { red, yellow } from "@mui/material/colors";
+import { Policy } from "@mui/icons-material";
 
 export const App = () => {
-let namePizzeria = 'mis dos reinas'
 
+  
+  const oscill = keyframes`
+  100% {
+    transform: translateY(3px) rotate(0.01deg);
+  }
+`;
+function AnimacionBandera() {
   return (
-   <>
-   <Container  maxWidth={'xl'} >
-    <Box sx={{ width:'100%'}}>
+    <Box
+      sx={{
 
-   <NavBar/>
+        animation: `${oscill} 2s ease-in-out infinite alternate`,
+        WebkitAnimation: `${oscill} 2s ease-in-out infinite alternate`,
+        MozAnimation: `${oscill} 2s ease-in-out infinite alternate`,
+        msAnimation: `${oscill} 2s ease-in-out infinite alternate`,
+        maxWidth: '100%',
+        position: 'relative',
+        height: '100%',
+        width: '270px',
+        minWidth: "150px",
+        display: 'flex',
+        justifyContent:'center',
+        alignItems: 'center',
+        outline: '1px solid rgba(255, 255, 255, 0)',
+        
+        '&:hover': {
+          outline: '1px solid rgba(255, 255, 255, 0.3)',
+        }
+      }}
+    >
+        
+            
+
+                 <img src="/src/assets/2922507_27121.jpg" width={200} className="bandera"  alt="" />
+            
     </Box>
-    
-   <Container sx={{display:'flex', flexDirection:'column', justifyContent:'center',alignItems:'center'}}>
-   <h1>¡Bienvenid@s, este es nuestro menú!</h1>
-   <Box sx={{display:'flex', justifyContent:'center',alignItems:'center'}}>
-    <Typography>Sabores Venezolanos</Typography>
-   </Box>
-
-   <MenuItems />
-   </Container>
-   </Container>
-   </>
-  )
+  );
 }
+  const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
+  const AnimatedBox = styled("div")`
+    animation: ${fadeIn} 5s ease-out forwards;
+  `;
+  return (
+    <>
+      <Container maxWidth={"xl"}>
+        <Box sx={{ width: "100%" }}>
+          <NavBar />
+        </Box>
+
+        <Container>
+          <AnimatedBox
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              bgcolor: "transparent",
+            }}
+          >
+            <Typography
+              sx={{
+                fontSize: "50px",
+                color: "white",
+                fontStyle: "italic",
+              }}
+            >
+              ¡Bienvenid@s!
+            </Typography>
+            <Box
+              
+            >
+              <Typography
+                sx={{
+                  fontSize: "100px",
+                  color: "white",
+                  fontWeight: 1000,
+                }}
+              >
+                Sabores Venezolanos
+              </Typography>
+            </Box>
+          <AnimacionBandera/>
+           
+          </AnimatedBox>
+
+          <MenuItems />
+        </Container>
+      </Container>
+    </>
+  );
+};
