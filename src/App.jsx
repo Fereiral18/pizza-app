@@ -88,7 +88,7 @@ function AnimacionBandera() {
             >
               <Typography
                 sx={{
-                  fontSize: "100px",
+                  fontSize: "7vw",
                   color: "white",
                   fontWeight: 1000,
                 }}

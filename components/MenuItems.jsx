@@ -11,10 +11,7 @@ import {
 } from "@mui/material";
 
 export const MenuItems = () => {
-  let imagesPizzas = [
-    "https://tarasmulticulturaltable.com/wp-content/uploads/2017/04/New-York-Style-Pizza-5-of-5.jpg",
-    "https://www.dondeir.com/wp-content/uploads/2019/08/pizza-hut-cadenas-de-pizza-cdmx.jpg",
-  ];
+ 
   const entradas = [
     {
       name: "Tequeños (8 unidades)",
@@ -226,6 +223,7 @@ export const MenuItems = () => {
             mt: 4,
             width: "100%",
             boxShadow: "8px 8px 20px black",
+            backgroundColor:"transparent",
           }}
         >
           <CardContent
@@ -234,22 +232,41 @@ export const MenuItems = () => {
               gap: "100px",
               justifyContent: "center",
               textAlign: "center",
-              backgroundColor: "#f0f0f0",
-              borderRadius: "20px",
               flexWrap: "wrap",
             }}
           >
-            <Stack>
-              <Typography variant="h5" gutterBottom>
+            <Stack sx={{
+              display: "flex",
+              justifyContent:"center",
+              alignItems:"center",
+              flexDirection:"column"
+            }}>
+              <Typography variant="h5" color="white" sx={{display:"flex",
+                flexDirection:"column",
+                justifyContent:"center",
+                alignItems:"start", fontSize: 35, fontFamily:"monospace"}} gutterBottom>
+                <Box>
+
                 Entradas
+                </Box>
+                <Box sx={{
+                  backgroundColor:"goldenrod",
+                  width:"90px",
+                  height:2
+                }}></Box>
               </Typography>
               <Container
                 sx={{
-                  backgroundColor: "white",
+                 
                   borderRadius: "20px",
-                  display: "flex",
-                  justifyContent: "center",
-                  flexDirection: "column",
+                  display:"flex",
+                  justifyContent:"center",
+                  alignItems:"center",
+                  flexDirection:"column",
+                  width:"100%",
+                  height:"800px"
+                 
+                  
                 }}
               >
                 {entradas.map((item, index) => (
@@ -257,46 +274,63 @@ export const MenuItems = () => {
                     key={index}
                     sx={{
                       display: "flex",
-                      justifyContent: "center",
-                      flexDirection: "column",
-                      alignItems: "center",
+                      justifyContent:"center",
+                      alignItems:"center",
+                      flexDirection:"column",
+                      width:"90%",
+                     
                     }}
                   >
                     <>
                       <Typography
                         component="span"
                         variant="body2"
-                        color="text.primary"
-                      >
+                        color="white"
+                        
+                        >
                         {item.name}
                       </Typography>
                       <Typography
                         component="span"
                         variant="body2"
-                        color="text.primary"
-                      >
+                        color="white"
+                        width={300}
+                        >
                         {item.varios?.map((item)=>(
                           <>
+                    <Box sx={{
+                          
+                            mb:"10px",
+                          
+                      
+                      width: "100%",
+                      height: 30
+                    }}>
                            <Typography
                         component="span"
                         variant="body2"
-                        color="text.secondary"
-                      >
+                        color="white"
+                        >
                         {item.name}
                       </Typography>
+                        </Box>
+                        <Box sx={{  
+                          
+                          
+                      width: "100%",
+                      height: 40}}>
+
                           <Typography
                         component="span"
                         display="block"
-                        color="primary"
+                        color="white"
                         sx={{
-                          display: "flex",
-                          justifyContent: "center",
-                          flexDirection: "column",
-                          alignItems: "center",
+                          color: "yellow",
                         }}
-                      >
-                        Precio: {item.precio}
+                        >
+                        $ {item.precio}
                       </Typography>
+                        </Box>
                           </>
                         ))}
                       </Typography>
@@ -305,27 +339,41 @@ export const MenuItems = () => {
                   </Box>
                 ))}
               </Container>
-              <Typography variant="h5" gutterBottom>
-                Arepas
+              <Typography variant="h5" color="white" sx={{
+                
+                display:"flex",
+                flexDirection:"column",
+                justifyContent:"center",
+                alignItems:"start", fontSize: 35, fontFamily:"monospace"
+              }}gutterBottom>
+                <Box>Arepas</Box>
+                <Box sx={{
+                  backgroundColor:"goldenrod",
+                  width:"90px",
+                  height:2
+                }}></Box>
+                
               </Typography>
               <Container
                 sx={{
-                  backgroundColor: "white",
+                  
                   borderRadius: "20px",
                   display: "flex",
                   justifyContent: "center",
+                  alignItems:"center",
                   flexDirection: "column",
+                  
                 }}
               >
-                <Typography>Rellenos: Carne, Pollo, Platano, Queso, Jamon, Cebolla, Chorizo, Caraota (Porotos), Cazon (Pescado), Lechuga, Tomate, Ensalada de gallina</Typography>
+                <Typography sx={{color:"yellow", width: '60%', mt: '20px', }}>Rellenos: Carne, Pollo, Platano, Queso, Jamon, Cebolla, Chorizo, Caraota (Porotos), Cazon (Pescado), Lechuga, Tomate, Ensalada de gallina</Typography>
                 {arepas.map((item, index) => (
                   <Box
                     key={index}
                     sx={{
                       display: "flex",
                       justifyContent: "center",
-                      flexDirection: "column",
                       alignItems: "center",
+                      
                     }}
                   >
                     <>
@@ -336,29 +384,28 @@ export const MenuItems = () => {
                       <Typography
                         component="span"
                         variant="body2"
-                        color="text.primary"
+                        color="white"
                       >
                         {item.name}
                       </Typography>
                       <Typography
                         component="span"
                         variant="body2"
-                        color="text.secondary"
+                        color="yellow"
                       >
                         {item.types}
                       </Typography>
                       <Typography
                         component="span"
                         display="block"
-                        color="primary"
+                        color="white"
+                        fontSize={18}
+                        fontWeight={800}
                         sx={{
-                          display: "flex",
-                          justifyContent: "center",
-                          flexDirection: "column",
-                          alignItems: "center",
+                         m: "10px"
                         }}
                       >
-                        Precio: {item.precio}
+                        $ {item.precio}
                       </Typography>
                     </>
                   </Box>
@@ -366,12 +413,22 @@ export const MenuItems = () => {
               </Container>
             </Stack>
             <Stack>
-              <Typography variant="h5" gutterBottom>
+              <Typography variant="h5" gutterBottom sx={{ display:"flex",
+                flexDirection:"column",
+                justifyContent:"center",
+                alignItems:"start", fontSize: 35, fontFamily:"monospace",
+                color:"white"}}>
+                  <Box>
                 Patacones
+
+                  </Box>
+                  <Box sx={{  backgroundColor:"goldenrod",
+                  width:"90px",
+                  height:2}}></Box>
               </Typography>
 
               <Container
-                sx={{ backgroundColor: "white", borderRadius: "20px" }}
+                sx={{ borderRadius: "20px" }}
               >
                 {patacones.map((patacones, index) => (
                   <Box
@@ -415,11 +472,23 @@ export const MenuItems = () => {
               </Container>
             </Stack>
             <List>
-              <Typography variant="h5" gutterBottom>
+              <Typography variant="h5" gutterBottom sx={{display:"flex",
+                flexDirection:"column",
+                justifyContent:"center",
+                alignItems:"start", fontSize: 35, fontFamily:"monospace",
+                color:"white"}}>
+                <Box>
                 Empanadas
+
+                </Box>
+                <Box sx={{
+                    backgroundColor:"goldenrod",
+                    width:"90px",
+                    height:2
+                }}></Box>
               </Typography>
               <Container
-                sx={{ backgroundColor: "white", borderRadius: "20px" }}
+                sx={{  borderRadius: "20px" }}
               >
                 {empanadas.map((item, index) => (
                   <Box key={index}>
@@ -449,18 +518,28 @@ export const MenuItems = () => {
               </Container>
             </List>
             <List>
-              <Typography variant="h5" gutterBottom>
+              <Typography variant="h5" sx={{display:"flex",
+                flexDirection:"column",
+                justifyContent:"center",
+                alignItems:"start", fontSize: 35, fontFamily:"monospace",
+                color:"white"}} gutterBottom>
+                  <Box>
                 Menu especial
+
+                  </Box>
+                  <Box sx={{backgroundColor:"goldenrod",
+                    width:"90px",
+                    height:2}}></Box>
               </Typography>
               <Container
-                sx={{ backgroundColor: "white", borderRadius: "20px" }}
+                sx={{  borderRadius: "20px" }}
               >
                 {especiales?.map((especiales, index) => (
                   <Box key={index}>
                     <Typography
                       component="span"
                       variant="body2"
-                      color="text.secondary"
+                      color="white"
                     >
                       {especiales.name}
                     </Typography>
@@ -474,9 +553,10 @@ export const MenuItems = () => {
                         justifyContent: "center",
                         flexDirection: "column",
                         alignItems: "center",
+                        color: 'white'
                       }}
                     >
-                      Precio: {especiales.precio}
+                      $ {especiales.precio}
                     </Typography>
                   </Box>
                 ))}
@@ -489,7 +569,7 @@ export const MenuItems = () => {
                       cachapas
                     </Typography>
                   <Container
-                    sx={{ backgroundColor: "white", borderRadius: "20px" }}
+                    sx={{borderRadius: "20px" }}
                   >
                     {cachapas.map((item, index) => (
                       <Box key={index}>
@@ -497,6 +577,9 @@ export const MenuItems = () => {
                           component="span"
                           variant="body2"
                           color="text.secondary"
+                          sx={{
+                            color:"white"
+                          }}
                         >
                           {item.name}
                         </Typography>

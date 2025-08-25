@@ -32,7 +32,7 @@ export const NavBar = () => {
           
           
          }}>
-         <img src="/src/assets/c0613559-b9c7-44aa-a7bd-4be79bef1d3f.jpeg"  class="logo" alt="" />
+         <img src="/public/c0613559-b9c7-44aa-a7bd-4be79bef1d3f.jpeg"  class="logo" alt="" />
          </Box>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
